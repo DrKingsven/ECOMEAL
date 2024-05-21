@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-
+import "./AppBarMenu.css"
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -53,9 +53,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function AppBarMenu() {
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
+        <Box  sx={{ flexGrow: 1 }}>
+            <AppBar sx={{boxShadow: "none"}} position="static">
+                <Toolbar className={"menuApp"}>
                     <IconButton
                         size="large"
                         edge="start"
@@ -71,14 +71,14 @@ export default function AppBarMenu() {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        MUI
+                        ECOMEAL
                     </Typography>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
-                            placeholder="Search…"
+                            placeholder="Поиск..."
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
