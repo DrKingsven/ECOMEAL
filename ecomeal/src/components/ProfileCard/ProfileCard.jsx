@@ -17,33 +17,88 @@ import FormLabel from "@mui/material/FormLabel";
 const ProfileCard = () => {
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
+    borderRadius: "10px",
+
     padding: theme.spacing(1),
-    // textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
   const BoxPrice = styled(Paper)(({ theme }) => ({
-    backgroundColor: "rgba(255, 255, 255, 0.15)",
-    margin: "10px",
-    height: "100px",
+    background: "rgb(9,121,109)",
+    borderRadius: "10px",
+    background:
+      "linear-gradient(90deg, rgba(9,121,109,1) 0%, rgba(92,199,78,1) 100%)",
+    margin: "2px",
+    boxShadow: "none",
+    padding: "20px",
   }));
 
   const CustomTypography = styled(Typography)(({ theme }) => ({
-    backgroundColor: "rgba(255, 255, 255, 0.15)",
+    color: "#ffffff",
+    padding: "10px 0px 0px 20px",
+  }));
+
+  const CustomTypographyWallet = styled(Typography)(({ theme }) => ({
+    color: "#666",
     padding: "10px 0px 0px 20px",
   }));
 
   const CustomTypographyAnotion = styled(Typography)(({ theme }) => ({
-    backgroundColor: "rgba(255, 255, 255, 0.15)",
-    margin: "0px 0px 0px 20px",
+    color: "#ffffff",
+    padding: "0px 0px 0px 20px",
+  }));
+
+  const CustomTypographyHeader = styled(Typography)(({ theme }) => ({
+    color: "#000",
+    padding: "0px 0px 0px 20px",
+  }));
+
+  const CustomTypographyMin = styled(Typography)(({ theme }) => ({
+    color: "#000",
+    padding: "0px 0px 0px 20px",
+  }));
+
+  
+ 
+
+  const BoxWalet = styled(Paper)(({ theme }) => ({
+    backgroundColor: "#dee3de",
+    margin: "10px",
+    boxShadow: "none",
+    width: "25%",
+    border: "1px solid #999",
+    borderRadius: "10px",
+
+
+    padding: "10px",
+  }));
+
+  const BoxNewWalet = styled(Paper)(({ theme }) => ({
+    backgroundColor: "#fff",
+    border: "1px dashed #999",
+    margin: "10px",
+    borderRadius: "10px",
+
+    boxShadow: "none",
+    width: "25%",
+    padding: "10px",
   }));
 
   return (
-    <Box sx={{ backgroundColor: "#44403F", height: "700px" }}>
+    <Box sx={{ backgroundColor: "#44403F", height: "100vh" }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Item>
             <Box sx={{ display: "flex", padding: "10px" }}>
-              <Avatar sx={{ marginRight: "10px" }}>H</Avatar>
+              <Avatar
+                sx={{
+                  marginRight: "10px",
+                  background: "rgb(50,172,166)",
+                  background:
+                    "linear-gradient(0deg, rgba(50,172,166,1) 0%, rgba(53,145,11,1) 100%)",
+                }}
+              >
+                H
+              </Avatar>
               <Typography variant="h4" component="h2">
                 Кирилл
               </Typography>
@@ -122,9 +177,9 @@ const ProfileCard = () => {
         </Grid>
         <Grid item xs={4}>
           <Item>
-          <BoxPrice>
+            <BoxPrice>
               <CustomTypography variant="h4" component="h3">
-               5 000₽
+                5 000₽
               </CustomTypography>
               <CustomTypographyAnotion variant="h6" component="h3">
                 Баланс
@@ -137,12 +192,40 @@ const ProfileCard = () => {
             {" "}
             <BoxPrice>
               <CustomTypography variant="h4" component="h3">
-               63 000₽
+                63 000₽
               </CustomTypography>
               <CustomTypographyAnotion variant="h6" component="h3">
                 Сумма выкупа
               </CustomTypographyAnotion>
             </BoxPrice>
+          </Item>
+        </Grid>
+        <Grid item xs={12}>
+          <Item>
+            <CustomTypographyWallet variant="h5">
+              Способы оплаты
+            </CustomTypographyWallet>
+            <Box sx={{ display: "flex", padding: "10px" }}>
+              <BoxWalet>
+                <CustomTypographyHeader variant="h6" component="h3">
+                  Основной способ
+                </CustomTypographyHeader>
+                <CustomTypographyMin
+                  sx={{ marginTop: "20%" }}
+                  variant="h6"
+                  component="h3"
+                >
+                 MIR..134
+                </CustomTypographyMin>
+              </BoxWalet>
+              <BoxWalet>
+
+              </BoxWalet>
+              <BoxWalet>
+
+              </BoxWalet>
+              <BoxNewWalet>Блок новая карта</BoxNewWalet>
+            </Box>
           </Item>
         </Grid>
       </Grid>
