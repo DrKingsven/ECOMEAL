@@ -10,6 +10,8 @@ import Profile from "./Page/Profile";
 import ProductCard from "./components/ProductCard/ProductCard";
 
 function App() {
+  localStorage.setItem('basket', []);
+
   const router = createBrowserRouter([
     {
       path: '/',

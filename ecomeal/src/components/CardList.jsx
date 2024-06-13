@@ -4,7 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Button, CardActionArea, CardActions, Grid } from '@mui/material';
-import { products } from "../products";
 import { styled, alpha } from '@mui/material/styles';
 
 import Banana from "../images/banana.jpg";
@@ -12,12 +11,35 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 export default function CardList() {
+
+    const [products, setProducts] = React.useState([]);
+
+    
+    // console.log(JSON.parse(localStorage.getItem('basket')))
+
+
+    React.useEffect(() => {
+        fetch('http://127.0.0.1:3000/v1/products', {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json"
+            },
+           })
+           .then((res) => res.json())
+           .then((data) => {
+              setProducts(data.products);
+           })
+           .catch((err) => {
+              console.log("error", err.message);
+           });
+     }, []);
+   
+
     const { category } = useParams();
-    const cardData = products;
 
     const filteredData = category && category !== "all"
-        ? cardData.filter(item => item.category.toLowerCase() === category.toLowerCase())
-        : cardData;
+        ? products.filter(item => item.category.toLowerCase() === category.toLowerCase())
+        : products;
 
     const CustomButton = styled(Button)(({ theme }) => ({
         backgroundColor: "rgb(92, 199, 78)",
@@ -66,7 +88,7 @@ export default function CardList() {
                                 </Typography>
                             </CustomCardContent>
                             <CardActions sx={{ justifyContent: "space-between" }}>
-                                <CustomButton variant='contained' size="small" color="primary">
+                                <CustomButton  variant='contained' size="small" color="primary">
                                     Купить
                                 </CustomButton>
                                 <CustomButton variant='contained' size="small" color="primary">
