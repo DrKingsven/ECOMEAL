@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Box, Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 
-import Banana from "../images/banana.jpg";
+// import Banana from "../images/banana.jpg";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
@@ -27,6 +27,7 @@ export default function CardList() {
            })
            .then((res) => res.json())
            .then((data) => {
+            // console.log(data.products)
               setProducts(data.products);
            })
            .catch((err) => {
