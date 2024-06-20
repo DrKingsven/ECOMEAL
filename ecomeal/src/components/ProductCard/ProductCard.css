@@ -2,3 +2,21 @@
     width: 100%;
     border-radius: 16px;
 }
+.price {
+line-height: 24px;
+font-weight: 700;
+color: rgb(92, 199, 78);
+margin-left: 0px;
+padding: 10px;
+}
+
+.stringRightBox{
+    /* font-size: 2rem; */
+line-height: 24px;
+/* font-weight: 700; */
+/* color: rgb(92, 199, 78); */
+margin-left: 0px;
+padding-left: 10px;
+padding-bottom: 5px;
+}
+

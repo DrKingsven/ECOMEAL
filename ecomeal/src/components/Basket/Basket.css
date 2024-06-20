@@ -1,0 +1,26 @@
+.basketList{
+    font-size: 20px;
+    margin: 10px;
+}
+
+.basketListMin{
+    font-size: 15px;
+    margin: 10px;
+
+}
+
+.priceBasket {
+    line-height: 24px;
+    font-weight: 700;
+    color: rgb(92, 199, 78);
+    margin-left: 0px;
+    padding-right: 10px;
+    }
+    .priceBasketMin{
+        /* line-height: 24px; */
+    /* font-weight: 700; */
+    color: rgb(103, 106, 102);
+    margin-left: 0px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    }

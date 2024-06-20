@@ -51,13 +51,7 @@ export default function NavigateMenu() {
             component={NavLink}
             to="Красота и уход"
           />
-          <Tab
-            sx={style}
-            label="Фрукты и овощи"
-            value="Фрукты и овощи"
-            component={NavLink}
-            to="Фрукты и овощи"
-          />
+          
           <Tab
             sx={style}
             label="Бытовые товары"

@@ -134,7 +134,9 @@ export default function AppBarMenu() {
             <FormControlLabel
               value="bottom"
               control={
-                <IconButton sx={{ color: "#fff" }}>
+                <IconButton 
+                href="/basket"
+                sx={{ color: "#fff" }}>
                   <ShoppingCartIcon fontSize="large" />{" "}
                 </IconButton>
               }

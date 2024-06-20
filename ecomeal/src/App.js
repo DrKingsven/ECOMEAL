@@ -8,6 +8,7 @@ import { Box } from "@mui/material";
 import CardList from "./components/CardList";
 import Profile from "./Page/Profile";
 import ProductCard from "./components/ProductCard/ProductCard";
+import Basket from "./components/Basket/Basket";
 
 function App() {
   localStorage.setItem('basket', []);
@@ -21,6 +22,10 @@ function App() {
     {
       path: '/profile',
       element: <Profile />
+    },
+    {
+      path: '/basket',
+      element: <Basket/>
     },
     {
       path: '/products',
